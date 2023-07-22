@@ -77,9 +77,8 @@ services:
     user: root
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      #- ./certs:/certs
-      - ${SWAGCERTPATH}:/certs:ro
-      #- ./certs:/certs
+      #- ${SWAGCERTPATH}:/certs:ro
+      - ${LOCVOL1}/${APPVOLDIR}/certs:/certs
       - ${LOCVOL1}/${APPVOLDIR}/media:/media
       - ${LOCVOL1}/${APPVOLDIR}/custom-templates:/templates
     env_file:
